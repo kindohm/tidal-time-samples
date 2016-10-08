@@ -43,13 +43,19 @@ d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "alone*8"
 |=| cut "1"
 |=| gain "1.2"
 |=| begin (choose steps)
+|=| speed "{1 1 1 1 2}%4"
 ```
 
-*Problems with this approach:*
+*Advantages:*
 
-- Require a specific `bps`
-- Require precise placement of notes in the sample
+- Can work with a long sample without cutting it up
 
+*Disadvantages:*
+
+- Requires a specific `bps`
+- Requires precise placement of notes in the sample
+- Requires a `steps` list
+- Requires `cut`
 
 ### loopAt
 
@@ -60,6 +66,11 @@ d1 $ loopAt 4 $ sound "calm"
 |=| gain "1.2"
 ```
 
+*Advantages:*
+
+- Very fast method for time-stretching long loops
+
+
 ### striate
 
 ```
@@ -67,6 +78,23 @@ d1 $ jux (iter 4) $ slow 8 $ (striate' 128 (1/100) $ sound "calm")
 |=| speed "[2, 3 5 4]"
 |=| gain "1.2"
 ```
+
+```
+d1 $ every 3 (|*| speed "-1") $ slow 8 $
+(spread' (striate' 256) (scale 0.01 0.05 $ slow 1.25 sine1) $ sound "break")
+|=| speed "[1 0.5, {2 3 4}%2]"
+|=| gain "1.2"
+
+d1 $ every 3 (|*| speed "-1") $ slowspread (slow) [8,16,4,8,32] $
+(spread' (striate' 256) (scale 0.01 0.05 $ slow 1.25 sine1) $ sound "break")
+|=| speed "[1 0.5, {2 3 4}%2]"
+|=| gain "1.2"
+```
+
+*Advantages:*
+
+- extreme granualization control
+- sequence <-> grain alignment creates interesting effects
 
 
 

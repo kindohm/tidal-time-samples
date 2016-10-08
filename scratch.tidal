@@ -1,8 +1,10 @@
-bps (170/120)
 
-let steps = take 16 [0,0.0625..]
 
-d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "alone*8"
-|=| cut "1"
+d1 $ slowspread (slow) [16,8,16,4] $ (striate' 256 (1/50) $ sound "break")
+|=| speed (every 2 rev $ "[2 1 -1 0.5, 3 5 4]")
 |=| gain "1.2"
-|=| begin (choose steps)
+
+d1 $ every 3 (|*| speed "-1") $ slowspread (slow) [8,16,4,8,32] $
+(spread' (striate' 256) (scale 0.01 0.05 $ slow 1.25 sine1) $ sound "break")
+|=| speed "[1 0.5, {2 3 4}%2]"
+|=| gain "1.2"
