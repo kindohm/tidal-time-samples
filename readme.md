@@ -15,7 +15,11 @@ A time-constrained sample can be a sample that:
 - has a specific duration
 - has a tempo-specific rhythm that lasts multiple beats
 
-## long breaks
+## long loops  
+
+### trigger at different points
+
+Good for precise, rhythmic loops, like breakbeats.
 
 ```
 bps (180/120)
@@ -28,11 +32,24 @@ d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "break*8"
 |=| begin (choose sixteenths)
 ```
 
-## long loops  
+### loopAt
+
+```
+bps (170/120)
+
+d1 $ loopAt 4 $ sound "calm"
+|=| gain "1.2"
+```
 
 ### striate
 
-### loopAt
+```
+d1 $ jux (iter 4) $ slow 8 $ (striate' 128 (1/100) $ sound "calm")
+|=| speed "[2, 3 5 4]"
+|=| gain "1.2"
+```
+
+
 
 ## short samples
 
