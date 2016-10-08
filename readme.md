@@ -32,6 +32,25 @@ d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "break*8"
 |=| begin (choose steps)
 ```
 
+Can also work for melodic sequences:
+
+```
+bps (170/120)
+
+let steps = take 16 [0,0.0625..]
+
+d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "alone*8"
+|=| cut "1"
+|=| gain "1.2"
+|=| begin (choose steps)
+```
+
+*Problems with this approach:*
+
+- Require a specific `bps`
+- Require precise placement of notes in the sample
+
+
 ### loopAt
 
 ```

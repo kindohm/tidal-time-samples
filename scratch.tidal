@@ -1,8 +1,8 @@
-bps (180/120)
+bps (170/120)
 
-let sixteenths = take 16 [0,0.0625..]
+let steps = take 16 [0,0.0625..]
 
-d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "break*8"
+d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "alone*8"
 |=| cut "1"
 |=| gain "1.2"
-|=| begin (choose x)
+|=| begin (choose steps)
