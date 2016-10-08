@@ -14,3 +14,23 @@ A time-constrained sample can be a sample that:
 
 - has a specific duration
 - has a tempo-specific rhythm that lasts multiple beats
+
+## notes
+
+### basic triggering at bps
+
+### long loops  
+
+#### striate
+
+#### loopAt
+
+### short samples
+
+#### unit and speed synth params
+
+#### begin and end variation
+
+#### other synth param variation
+
+### re-sampling
