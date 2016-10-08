@@ -151,3 +151,5 @@ d1 $ s "think*8"
 ```
 
 ## re-sampling
+
+???

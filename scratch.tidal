@@ -1,7 +1,30 @@
 bps (150/120)
 
-d1 $ s "{seq3 seq2 [~ seq3] ~ seq2 [~ seq3] ~}%2"
+d1 $ whenmod 10 7 (iter 8) $
+foldEvery [3,4] (0.25 <~) $
+whenmod 7 5 (jux (iter 4)) $
+every 5 (rev) $ every 6 (chop 4) $
+every 7 (|=| accelerate "-1 1") $
+every 8 (# coarse "24 16 32") $
+stack [s "{seq3 seq2 [~ seq3] ~ seq2 [~ seq3] ~}%2"
   # n (slow (4/3) $ run 9)
-  # gain "1.2"
+  # gain "1"
   # unit "c"
-  # speed "1"
+  # cut "1"
+  # speed "1",
+slowcat [s "think*8"
+  # n (irand 10)
+  # unit "c"
+  # speed "4"
+  # shape "0.4",
+  s "funky*8"
+    # n (irand 10)
+    # unit "c"
+    # speed "8"
+    # shape "0"]]
+
+
+
+d1 $ sound "resample*2" |=| n (irand 4) |=| unit "c" |=| speed "2"
+
+  hush
