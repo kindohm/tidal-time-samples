@@ -15,22 +15,31 @@ A time-constrained sample can be a sample that:
 - has a specific duration
 - has a tempo-specific rhythm that lasts multiple beats
 
-## notes
+## long breaks
 
-### basic triggering at bps
+```
+bps (180/120)
 
-### long loops  
+let sixteenths = [0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375]
 
-#### striate
+d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "break*8"
+|=| cut "1"
+|=| gain "1.2"
+|=| begin (choose sixteenths)
+```
 
-#### loopAt
+## long loops  
 
-### short samples
+### striate
 
-#### unit and speed synth params
+### loopAt
 
-#### begin and end variation
+## short samples
 
-#### other synth param variation
+### unit and speed synth params
 
-### re-sampling
+### begin and end variation
+
+### other synth param variation
+
+## re-sampling
