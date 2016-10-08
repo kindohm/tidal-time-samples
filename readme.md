@@ -138,17 +138,15 @@ d1 $ s "funky*4"
 > Let one sample contain multiple drum hits (but make sure each sample is the
 > same number of beats).
 
-### begin variation
+*Advantages:*
 
-```
-d1 $ s "think*8"
-  # n (irand 8)
-  # gain "1.2"
-  # unit "c"
-  # speed "4"
-  # begin (choose [0.5,0])
-  # cut "1"
-```
+- ultimate pattern variation with seamless unit stretching
+
+*Disadvantages:*
+
+- tedious to set up (lots of sample slicing)
+- DAW or precise sample slicer recommended
+- slight variations in sample length yields different relative pitches
 
 ## re-sampling
 
