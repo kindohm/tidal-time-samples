@@ -24,12 +24,12 @@ Good for precise, rhythmic loops, like breakbeats.
 ```
 bps (180/120)
 
-let sixteenths = [0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375]
+let steps = take 16 [0,0.0625..]
 
 d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "break*8"
 |=| cut "1"
 |=| gain "1.2"
-|=| begin (choose sixteenths)
+|=| begin (choose steps)
 ```
 
 ### loopAt

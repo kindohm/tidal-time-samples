@@ -1,6 +1,8 @@
-bps (170/120)
+bps (180/120)
 
-d1 $ loopAt 4 $ sound "calm"
+let sixteenths = take 16 [0,0.0625..]
+
+d1 $ every 2 (density 2) $ degradeBy 0.5 $ sound "break*8"
+|=| cut "1"
 |=| gain "1.2"
-
-hush
+|=| begin (choose x)
