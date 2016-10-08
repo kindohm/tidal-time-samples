@@ -95,15 +95,59 @@ d1 $ every 3 (|*| speed "-1") $ slowspread (slow) [8,16,4,8,32] $
 
 - extreme granualization control
 - sequence <-> grain alignment creates interesting effects
+- high-risk / high-benefit live-coding :D :D :D :D
 
+*Disadvantages:*
+
+- high-risk / high-benefit live-coding
 
 
 ## short samples
 
+If you have the patience and means to do a little slicing, try creating
+smaller units of sequences for more control and options.
+
 ### unit and speed synth params
 
-### begin and end variation
+With a rhythmic melodic sequence:
 
-### other synth param variation
+```
+d1 $ s "{seq3 seq2 [~ seq3] ~ seq2 [~ seq3] ~}%2"
+  # n (slow (4/3) $ run 9)
+  # gain "1.2"
+  # unit "c"
+  # speed "1"
+```
+
+With chopped up drum breaks:
+
+```
+d1 $ s "funky*4"
+  # n (irand 8)
+  # gain "1.2"
+  # unit "c"
+  # speed "4"
+
+```
+
+> NOTE: when slicing up a drum break into individual samples  to use with
+> "unit" and "speed", just make sure that each slice is for the same number
+> of beats.
+
+> TIP: for drum break slices, try slicing at quarter or half cycle durations.
+> Let one sample contain multiple drum hits (but make sure each sample is the
+> same number of beats).
+
+### begin variation
+
+```
+d1 $ s "think*8"
+  # n (irand 8)
+  # gain "1.2"
+  # unit "c"
+  # speed "4"
+  # begin (choose [0.5,0])
+  # cut "1"
+```
 
 ## re-sampling
