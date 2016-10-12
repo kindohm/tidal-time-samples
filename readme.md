@@ -21,6 +21,8 @@ A time-constrained sample can be a sample that:
 
 Good for precise, rhythmic loops, like breakbeats.
 
+> Try with Dirt-Samples: breaks165
+
 ```
 bps (180/120)
 
